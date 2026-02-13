@@ -62,7 +62,7 @@ The goal is simple: remove barriers between thought and expression.
 │   │ 
 ├── 📂 routes/
 │   ├── 📂 App/
-│   ├── 📂 Home/  
+│   ├── 📂 Profile/  
 │   │ 
 │   │ 
 ├── 📄 main.css
