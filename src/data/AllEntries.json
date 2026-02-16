@@ -1,0 +1,150 @@
+{
+  "users": {
+    "u-1a92f": {
+      "id": "u-1a92f",
+      "email": null,
+      "displayName": "Kyle",
+      "displayPicture": "https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_1_oxcwq4.png",
+      "authProvider": "local",
+      "preferences": {
+        "theme": "system",
+        "reducedMotion": false,
+        "dailyReminderTime": "18:00"
+      },
+      "createdAt": "2026-02-10T08:00:00.000Z",
+      "updatedAt": "2026-02-10T08:00:00.000Z"
+    },
+    "u-9f33x": {
+      "id": "u-9f33x",
+      "email": "lagbaja.dev@gmail.com",
+      "displayName": "Lagbaja Tamedu",
+      "displayPicture": "https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_1_oxcwq4.png",
+      "authProvider": "google",
+      "preferences": {
+        "theme": "dark",
+        "reducedMotion": true,
+        "dailyReminderTime": "21:30"
+      },
+      "createdAt": "2026-01-15T14:12:00.000Z",
+      "updatedAt": "2026-02-14T18:00:00.000Z"
+    },
+    "u-temp-7821": {
+      "id": "u-temp-7821",
+      "email": null,
+      "displayName": null,
+      "displayPicture": "https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_1_oxcwq4.png",
+      "authProvider": "anonymous",
+      "preferences": {
+        "theme": "light",
+        "reducedMotion": false,
+        "dailyReminderTime": null
+      },
+      "createdAt": "2026-02-16T07:02:33.000Z",
+      "updatedAt": "2026-02-16T07:02:33.000Z"
+    }
+  },
+
+  "journalEntries": {
+    "b2f6e2d1-3a9c-4e55-a9d3-02d7c3a9a111": {
+      "id": "b2f6e2d1-3a9c-4e55-a9d3-02d7c3a9a111",
+      "userId": "u-1a92f",
+      "title": "Finally Feeling Stable",
+      "content": {
+        "text": "Today felt calm. I managed my tasks well and avoided distractions.",
+        "transcript": null
+      },
+      "media": {
+        "image": []
+      },
+      "mood": {
+        "primary": "calm",
+        "intensity": 4
+      },
+      "tags": ["work", "focus"],
+      "metadata": {
+        "isFavorite": true,
+        "source": "manual",
+        "wordCount": 12
+      },
+      "createdAt": "2026-02-16T09:14:22.000Z",
+      "updatedAt": "2026-02-16T09:14:22.000Z"
+    },
+    "6a913b2f-d4c1-44a3-b2e7-9387c7e29211": {
+      "id": "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
+      "userId": "u-1a92f",
+      "title": "Rough Morning",
+      "content": {
+        "text": "I woke up feeling anxious about the presentation.",
+        "transcript": "i woke up feeling anxious about the presentation"
+      },
+      "media": {
+        "image": [
+          "https://storage.app/images/journal/rough-morning-1.jpg"
+        ]
+      },
+      "mood": {
+        "primary": "anxious",
+        "intensity": 4
+      },
+      "tags": ["presentation", "career"],
+      "metadata": {
+        "isFavorite": false,
+        "source": "voice",
+        "wordCount": 9
+      },
+      "createdAt": "2026-02-15T07:21:10.000Z",
+      "updatedAt": "2026-02-15T07:25:40.000Z"
+    },
+    "c1df902e-883f-47d9-9f6c-113cbad8e912": {
+      "id": "c1df902e-883f-47d9-9f6c-113cbad8e912",
+      "userId": "u-9f33x",
+      "title": "Unexpected Joy",
+      "content": {
+        "text": "Had an unexpected call from an old friend. It lifted my mood.",
+        "transcript": "had an unexpected call from an old friend"
+      },
+      "media": {
+        "image": []
+      },
+      "mood": {
+        "primary": "happy",
+        "intensity": 5
+      },
+      "tags": ["friends", "gratitude"],
+      "metadata": {
+        "isFavorite": false,
+        "source": "combination",
+        "wordCount": 14
+      },
+      "createdAt": "2026-02-14T18:02:55.000Z",
+      "updatedAt": "2026-02-14T18:10:13.000Z"
+    }
+  },
+
+  "quotes": {
+    "q-001": {
+      "id": "q-001",
+      "text": "Small daily improvements are the key to staggering long-term results.",
+      "author": "Robin Sharma",
+      "category": "growth",
+      "source": "system",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    "q-002": {
+      "id": "q-002",
+      "text": "Feelings are just visitors. Let them come and go.",
+      "author": "Mooji",
+      "category": "mindfulness",
+      "source": "system",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    "q-1032": {
+      "id": "q-1032",
+      "text": "If we find ourselves with a desire that nothing in this world can satisfy, the most probable explanation is that we were made for another world.",
+      "author": "CS Lewis",
+      "category": "existence",
+      "source": "user",
+      "createdAt": "2026-02-10T12:45:10.000Z"
+    }
+  }
+}
