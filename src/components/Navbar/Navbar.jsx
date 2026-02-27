@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-brand hidden">
+        <div className="navbar-brand visually-hidden">
           <AppLogo />
         </div>
 

@@ -16,15 +16,6 @@
   cursor: pointer;
 }
 
-.navbar-brand {
-}
-.hidden {
-  /* Make it hidden */
-  visibility: hidden;
-  display: inline;
-  height: 0;
-  width: 0;
-}
 
 /* Specific for Tablet */
 /* 500px = 31.25rem, 1023px = 63.9375rem */
