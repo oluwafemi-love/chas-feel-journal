@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Journal from './components/Journal/Journal'
+import { useState } from "react";
+// import viteLogo from '/vite.svg'
+import "./App.css";
+import Journal from "./routes/Journal/Journal";
+import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
-
   return (
     <>
-     <Journal />
+      <Header />
+      <Sidebar />
+      <Journal />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

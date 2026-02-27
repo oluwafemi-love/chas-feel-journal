@@ -1,1 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  /* Root Stuffs: */
+  --shadow-color: 5deg 37% 71%;
+  --shadow-elevation-low:
+    0px -0.3px 0.2px hsl(var(--shadow-color) / 0.38),
+    0px -0.4px 0.3px -2.5px hsl(var(--shadow-color) / 0.25),
+    0px -1px 0.8px -5px hsl(var(--shadow-color) / 0.13);
+  --shadow-elevation-medium:
+    0px -0.3px 0.2px hsl(var(--shadow-color) / 0.39),
+    0px -0.5px 0.4px -1.7px hsl(var(--shadow-color) / 0.3),
+    0px -1.6px 1.2px -3.3px hsl(var(--shadow-color) / 0.2),
+    0px -4.8px 3.6px -5px hsl(var(--shadow-color) / 0.1);
+  --shadow-elevation-high:
+    0px 1px 1.5px hsl(var(--shadow-color) / 0.6),
+    0px 2px 3px hsl(var(--shadow-color) / 0.4),
+    0px 4px 6px hsl(var(--shadow-color) / 0.25),
+    0px 8px 12px hsl(var(--shadow-color) / 0.15),
+    0px 16px 24px hsl(var(--shadow-color) / 0.1);
+
+  --dark-background-color: 356deg 100% 3%;
+  --light-background-color: 356deg 44% 98%;
+  --accent-color: 257deg 100% 88%;
+
+  --gray-10: 264deg 8% 12%;
+  --gray-15: 264deg 8% 17%;
+  --gray-20: 264deg 8% 22%;
+
+  --off-white: 0deg 0% 85%;
+  --our-white: 0deg 50% 98%;
+
+  --vibrant-red: 352deg 72% 52%;
+
+  --typpography-title: calc(24 / 16 * 1rem);
+  --typpography-heading-1: calc(22 / 16 * 1rem);
+  --typpography-heading-2: calc(20 / 16 * 1rem);
+  --typpography-heading-3: calc(18 / 16 * 1rem);
+  --typpography-normal: calc(12 / 16 * 1rem);
+
+  font-family:
+    "Urbanist", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* App */
+  background-color: hsl(var(--dark-background-color));
+  color: hsl(var(--our-white));
+
+  /* Mobile Padding */
+  padding-top: 36px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 36px;
+
+  /* TODO: Tablet Padding */
+
+  /* TODO: Desktop Padding */
+}
+
+/* Class to Hide stuffs */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
