@@ -1,12 +1,14 @@
 import React from "react";
 import icons from "../../constants/icons";
 import AppLogo from "../AppLogo/AppLogo";
-import './Sidebar.css';
+import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ sidebarIsOpen }) {
   return (
     <>
-      <div class="sidebar-menu" id="sidebarMenu">
+      <div
+        className={`sidebar-menu ${sidebarIsOpen ? "" : "visually-hidden"}`}
+      >
         <AppLogo />
         <ul>
           <li>

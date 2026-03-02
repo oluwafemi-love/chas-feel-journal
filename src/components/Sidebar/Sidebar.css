@@ -1,16 +1,17 @@
-.sidebar-menu{
-  width: 237px;
-  height: 100%;
+.sidebar-menu {
+  width: calc(250 / 16 * 1rem); 
+  min-width: fit-content;
+  height: 100vh;
   background-color: hsl(var(--gray-15));
   padding: 12px;
 
 
-  li:first-child{
+  li:first-child {
     background-color: hsl(var(--accent-color));
-    color: hsl(var(--gray-20))
+    color: hsl(var(--gray-20));
   }
 
-  li{
+  li {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -21,6 +22,5 @@
     margin-bottom: 4px;
     font-weight: 600;
     font-size: var(--typpography-heading-3);
-    
   }
 }

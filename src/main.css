@@ -52,15 +52,6 @@ html, body, #root {
   background-color: hsl(var(--dark-background-color));
   color: hsl(var(--our-white));
 
-  /* App-Wide Padding: Mobile */
-  padding-top: 36px;
-  padding-left: 18px;
-  padding-right: 18px;
-  padding-bottom: 36px;
-
-  /* TODO: App-Wide Padding: Tablet */
-
-  /* TODO: App-Wide Padding: Desktop */
 }
 
 /* Class to Hide stuffs */
@@ -71,5 +62,5 @@ html, body, #root {
   overflow: hidden;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  white-space: nowrap;
+  white-space: nowrap;  
 }

@@ -1,16 +1,21 @@
-import { useState } from "react";
-// import viteLogo from '/vite.svg'
+import React from "react";
 import "./App.css";
-import Journal from "./routes/Journal/Journal";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
+
+//  function toggleSidebar() {
+//     setSidebarOpen(prev => !prev);
+//   }
+
   return (
     <>
-      <Header />
-      <Sidebar />
-      <Journal />
+      <Header
+        onToggleSidebar={()=>setSidebarOpen(prev => !prev)}
+      />
+      <Sidebar sidebarIsOpen={sidebarOpen} />
     </>
   );
 }
