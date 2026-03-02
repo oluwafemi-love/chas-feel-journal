@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+}
+
+.navbar-toggler {
+  width: calc(20 / 16 * 1rem);
+  height: calc(20 / 16 * 1rem);
+
+  span{
+    display: inline-block;
+    text-align: center;
+  }
+  
+}
+.navbar-toggler:hover{
+  cursor: pointer;
+}
+
+
+/* Specific for Tablet */
+/* 500px = 31.25rem, 1023px = 63.9375rem */
+@media (min-width: 31.25rem) and (max-width: 63.9375rem) {
+}
+
+/* Desktop */
+/* 401px = 25.0625rem */
+@media (min-width: 25.0625rem) {
+  .signup-button {
+    font-size: 1rem;
+  }
+}

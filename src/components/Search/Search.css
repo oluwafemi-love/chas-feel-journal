@@ -1,0 +1,15 @@
+.search-input {
+  background-color: hsl(260, 7%, 17%);
+
+
+  border-radius: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 12px;
+  gap: 8px;
+
+  outline: none;
+}
