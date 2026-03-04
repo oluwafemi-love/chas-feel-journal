@@ -3,7 +3,7 @@ import ALL_JOURNALS from '../../data/AllJournals'
 
 const currentJournal = ALL_JOURNALS[2]
 const dateUpdated = new Date(currentJournal.updatedAt).toDateString()
-console.log(dateUpdated);
+
 
 function Journal() {
   return (
