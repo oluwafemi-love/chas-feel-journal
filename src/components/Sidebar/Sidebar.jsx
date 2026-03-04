@@ -2,6 +2,7 @@ import React from "react";
 import icons from "../../constants/icons";
 import AppLogo from "../AppLogo/AppLogo";
 import "./Sidebar.css";
+import { Link } from "@tanstack/react-router";
 
 function Sidebar({ sidebarIsOpen }) {
   return (
@@ -11,10 +12,13 @@ function Sidebar({ sidebarIsOpen }) {
       >
         <AppLogo />
         <ul>
-          <li>
-            {icons.journalIcon()}
-            <span href="#home">Journals</span>
-          </li>
+          <Link to="/MyJournals/MyJournals">
+            <li>
+              {icons.journalIcon()}
+              <span>Journals</span>
+            </li>
+          </Link>
+
           <li>
             {icons.sendMessageIcon()}
             <span href="#quotes">Quotes</span>

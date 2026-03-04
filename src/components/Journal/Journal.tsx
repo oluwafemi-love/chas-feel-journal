@@ -1,9 +1,16 @@
 import React from 'react'
+import ALL_JOURNALS from '../../data/AllJournals'
+
+const currentJournal = ALL_JOURNALS[2]
+const dateUpdated = new Date(currentJournal.updatedAt).toDateString()
+console.log(dateUpdated);
 
 function Journal() {
   return (
     <div>
-      A Journal
+      <p>{dateUpdated}</p>
+      <h1>{currentJournal.title}</h1>
+      <p>{currentJournal.content.text}</p>
     </div>
   )
 }
