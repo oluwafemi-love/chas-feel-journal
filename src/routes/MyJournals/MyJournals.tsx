@@ -1,25 +1,29 @@
 import React from 'react'
 import { Link } from "@tanstack/react-router";
 import { createFileRoute } from '@tanstack/react-router'
+import Journal from '../../components/Journal/Journal';
 
-export const Route = createFileRoute('/Journal/Journal')({
+export const Route = createFileRoute('/MyJournals/MyJournals')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  return <Journal />
+  return <MyJournals />
 }
 
-function Journal() {
+function MyJournals() {
   return (
     <>
       <div className="text-3xl font-bold underline">
-        My Journal
+        My Journals Page
       </div>
 
-     
+      <Journal />
     </>
+
+
+
   )
 }
 
-export default Journal
+export default MyJournals
