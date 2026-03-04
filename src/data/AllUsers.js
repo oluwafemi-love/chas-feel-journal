@@ -1,4 +1,4 @@
-export const ALL_USERS = [
+const ALL_USERS = [
   {
     id: "u-1a92f",
     email: null,
@@ -44,3 +44,5 @@ export const ALL_USERS = [
     updatedAt: "2026-02-16T07:02:33.000Z",
   },
 ];
+
+export default ALL_USERS;

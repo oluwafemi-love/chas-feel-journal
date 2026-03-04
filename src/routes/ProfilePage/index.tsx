@@ -5,7 +5,7 @@ import EditProfileDP from '../../components/Profile/EditProfileDP'
 import ChangeColor from '../../components/Profile/ChangeColor'
 import Footer from '../../components/Footer/Footer'
 
-import { ALL_USERS } from '../../data/AllUsers'
+import  ALL_USERS  from '../../data/AllUsers'
 
 export const Route = createFileRoute('/ProfilePage/')({
   component: RouteComponent,

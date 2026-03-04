@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProfilePageIndexRouteImport } from './routes/ProfilePage/index'
-import { Route as JournalJournalRouteImport } from './routes/Journal/Journal'
+import { Route as MyJournalsMyJournalsRouteImport } from './routes/MyJournals/MyJournals'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,39 +23,39 @@ const ProfilePageIndexRoute = ProfilePageIndexRouteImport.update({
   path: '/ProfilePage/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const JournalJournalRoute = JournalJournalRouteImport.update({
-  id: '/Journal/Journal',
-  path: '/Journal/Journal',
+const MyJournalsMyJournalsRoute = MyJournalsMyJournalsRouteImport.update({
+  id: '/MyJournals/MyJournals',
+  path: '/MyJournals/MyJournals',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/Journal/Journal': typeof JournalJournalRoute
+  '/MyJournals/MyJournals': typeof MyJournalsMyJournalsRoute
   '/ProfilePage/': typeof ProfilePageIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/Journal/Journal': typeof JournalJournalRoute
+  '/MyJournals/MyJournals': typeof MyJournalsMyJournalsRoute
   '/ProfilePage': typeof ProfilePageIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/Journal/Journal': typeof JournalJournalRoute
+  '/MyJournals/MyJournals': typeof MyJournalsMyJournalsRoute
   '/ProfilePage/': typeof ProfilePageIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/Journal/Journal' | '/ProfilePage/'
+  fullPaths: '/' | '/MyJournals/MyJournals' | '/ProfilePage/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/Journal/Journal' | '/ProfilePage'
-  id: '__root__' | '/' | '/Journal/Journal' | '/ProfilePage/'
+  to: '/' | '/MyJournals/MyJournals' | '/ProfilePage'
+  id: '__root__' | '/' | '/MyJournals/MyJournals' | '/ProfilePage/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  JournalJournalRoute: typeof JournalJournalRoute
+  MyJournalsMyJournalsRoute: typeof MyJournalsMyJournalsRoute
   ProfilePageIndexRoute: typeof ProfilePageIndexRoute
 }
 
@@ -75,11 +75,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfilePageIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/Journal/Journal': {
-      id: '/Journal/Journal'
-      path: '/Journal/Journal'
-      fullPath: '/Journal/Journal'
-      preLoaderRoute: typeof JournalJournalRouteImport
+    '/MyJournals/MyJournals': {
+      id: '/MyJournals/MyJournals'
+      path: '/MyJournals/MyJournals'
+      fullPath: '/MyJournals/MyJournals'
+      preLoaderRoute: typeof MyJournalsMyJournalsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -87,7 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  JournalJournalRoute: JournalJournalRoute,
+  MyJournalsMyJournalsRoute: MyJournalsMyJournalsRoute,
   ProfilePageIndexRoute: ProfilePageIndexRoute,
 }
 export const routeTree = rootRouteImport
