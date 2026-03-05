@@ -1,17 +1,19 @@
+import { Link } from '@tanstack/react-router'
 import React from 'react'
-import ALL_JOURNALS from '../../data/AllJournals'
+import './Journal.css'
 
-const currentJournal = ALL_JOURNALS[2]
-const dateUpdated = new Date(currentJournal.updatedAt).toDateString()
-
-
-function Journal() {
+function Journal({ journal }) {
+  const dateUpdated = new Date(journal.updatedAt).toDateString()
   return (
-    <div>
-      <p>{dateUpdated}</p>
-      <h1>{currentJournal.title}</h1>
-      <p>{currentJournal.content.text}</p>
-    </div>
+    <Link to="/MyJournals/journal-in-detail/$journalId" 
+    params={{ journalId: journal.id }}>
+      <div className='single-journal-wrapper'>
+        <p>{dateUpdated}</p>
+        <h1>{journal.title}</h1>
+        <p>{journal.content.text}</p>
+      </div>
+    </Link>
+
   )
 }
 

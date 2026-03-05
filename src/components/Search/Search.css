@@ -1,5 +1,5 @@
 .search-input {
-  background-color: hsl(260, 7%, 17%);
+  background-color: hsl(var(--my-shade-color-l2b));
 
 
   border-radius: 28px;

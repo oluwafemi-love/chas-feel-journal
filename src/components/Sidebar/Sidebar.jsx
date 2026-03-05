@@ -12,7 +12,7 @@ function Sidebar({ sidebarIsOpen }) {
       >
         <AppLogo />
         <ul>
-          <Link to="/MyJournals/MyJournals">
+          <Link to="/MyJournals/">
             <li>
               {icons.journalIcon()}
               <span>Journals</span>

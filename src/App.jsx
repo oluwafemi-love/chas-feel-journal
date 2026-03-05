@@ -18,9 +18,7 @@ const hasLogin = !!currentUser; //Instead of  if (currentUser){ hasLogin = true;
 const hasCreatedJournal = userJournals.length > 0;
 
 const notYetCreatedAJournalMessage = `
-    When you add a note, it will appear here...
-
-    Meanwhile, enjoy the solemn background music  
+    When you add a note, it will appear here...  
   `;
 
 function App() {

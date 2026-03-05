@@ -1,14 +1,18 @@
 .sidebar-menu {
-  width: calc(250 / 16 * 1rem); 
+  width: calc(250 / 16 * 1rem);
   min-width: fit-content;
   height: 100vh;
-  background-color: hsl(var(--gray-15));
+  background-color: hsl(var(--my-shade-color-l1));
   padding: 12px;
 
+  li:focus {
+    background-color: hsl(var(--my-accent-color-l1));
+    color: hsl(var(--my-dark-color-l1));
+  }
 
-  li:first-child {
-    background-color: hsl(var(--accent-color));
-    color: hsl(var(--gray-20));
+  li:hover {
+    background-color: hsl(var(--my-gray-color-l1));
+    color: hsl(var(--my-dark-color-l1));
   }
 
   li {
@@ -22,5 +26,13 @@
     margin-bottom: 4px;
     font-weight: 600;
     font-size: var(--typpography-heading-3);
+  }
+
+  /* Lightmode for sidebar */
+  @media (prefers-color-scheme: light) {
+    .sidebar-menu {
+      background-color: hsl(var(--my-shade-color-l1));
+      color: hsl(var(--my-gray-color-l1));
+    }
   }
 }

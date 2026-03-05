@@ -1,0 +1,19 @@
+.my-journals-wrapper {
+  width: 304px;
+  height: 541px;
+
+  display: grid;
+  
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 6px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}

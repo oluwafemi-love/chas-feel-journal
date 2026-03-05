@@ -2,43 +2,66 @@
 
 @import "tailwindcss";
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
 
 #root {
-  /* Root Stuffs: */
-  --shadow-color: 5deg 37% 71%;
-  --shadow-elevation-low:
-    0px -0.3px 0.2px hsl(var(--shadow-color) / 0.38),
-    0px -0.4px 0.3px -2.5px hsl(var(--shadow-color) / 0.25),
-    0px -1px 0.8px -5px hsl(var(--shadow-color) / 0.13);
-  --shadow-elevation-medium:
-    0px -0.3px 0.2px hsl(var(--shadow-color) / 0.39),
-    0px -0.5px 0.4px -1.7px hsl(var(--shadow-color) / 0.3),
-    0px -1.6px 1.2px -3.3px hsl(var(--shadow-color) / 0.2),
-    0px -4.8px 3.6px -5px hsl(var(--shadow-color) / 0.1);
-  --shadow-elevation-high:
-    0px 1px 1.5px hsl(var(--shadow-color) / 0.6),
-    0px 2px 3px hsl(var(--shadow-color) / 0.4),
-    0px 4px 6px hsl(var(--shadow-color) / 0.25),
-    0px 8px 12px hsl(var(--shadow-color) / 0.15),
-    0px 16px 24px hsl(var(--shadow-color) / 0.1);
+  /* Colors: */
+  --my-dark-color: 0deg 0% 0%;
+  --my-dark-color-l1: 0deg 0% 10%;
+  --my-dark-color-l2: 0deg 0% 20%;
+  --my-dark-color-l3: 0deg 0% 30%;
 
-  --dark-background-color: 356deg 100% 3%;
-  --light-background-color: 356deg 44% 98%;
-  --accent-color: 257deg 100% 88%;
+  --my-light-color: 0deg 0% 100%;
 
-  --gray-10: 264deg 8% 12%;
-  --gray-15: 264deg 8% 17%;
-  --gray-20: 264deg 8% 22%;
+  --my-shade-color: 221deg 51% 16%;
+  --my-shade-color-l1: 221deg 42% 26%;
+  --my-shade-color-l2: 221deg 33% 36%;
+  --my-shade-color-l3: 221deg 33% 46%;
+  --my-shade-color-l1b: 221deg 21% 16%;
+  --my-shade-color-l2b: 220deg 14% 18%;
 
-  --off-white: 0deg 0% 85%;
-  --our-white: 0deg 50% 98%;
+  --my-accent-color: 37deg 98% 53%;
+  --my-accent-color-l1: 37deg 88% 63%;
+  --my-accent-color-l2: 37deg 78% 73%;
+  --my-accent-color-l3: 37deg 80% 83%;
 
-  --vibrant-red: 352deg 72% 52%;
+  --my-gray-color: 0deg 0% 90%;
+  --my-gray-color-d1: 0deg 0% 60%;
+  --my-gray-color-d2: 0deg 0% 70%;
+  --my-gray-color-d3: 0deg 0% 80%;
+  --my-gray-color-l1: 0deg 0% 93%;
+  --my-gray-color-l2: 0deg 0% 96%;
+  --my-gray-color-l3: 0deg 0% 98%;
 
+  --my-red: 352deg 72% 52%;
+
+  --my-dark-bg-color: linear-gradient(
+    45deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(230deg 100% 7%) 28%,
+    hsl(220deg 99% 8%) 44%,
+    hsl(218deg 82% 10%) 58%,
+    hsl(218deg 70% 12%) 72%,
+    hsl(220deg 59% 14%) 85%,
+    hsl(221deg 51% 16%) 100%
+  );
+
+  --my-light-bg-color: linear-gradient(
+    40deg,
+    hsl(221deg 33% 46%) 0%,
+    hsl(224deg 27% 57%) 2%,
+    hsl(226deg 27% 68%) 8%,
+    hsl(227deg 27% 78%) 17%,
+    hsl(228deg 27% 89%) 36%,
+    hsl(0deg 0% 100%) 100%
+  );
+
+  /* Typography */
   --typpography-title: calc(24 / 16 * 1rem);
   --typpography-heading-1: calc(22 / 16 * 1rem);
   --typpography-heading-2: calc(20 / 16 * 1rem);
@@ -48,13 +71,22 @@ html, body, #root {
   font-family:
     "Urbanist", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-  /* App */
-  background-color: hsl(var(--dark-background-color));
-  color: hsl(var(--our-white));
+  /* Set App Color - dark mode -default*/
+  background-color: hsl(var(--my-dark-color-l1));
+  background-image: var(--my-dark-bg-color);
+  color: hsl(var(--my-gray-color-l1));
 
+  /* Set App Color - light mode*/
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: hsl(var(--my-light-color));
+      background-image: var(--my-light-bg-color);
+      color: hsl(var(--my-dark-color-l2));
+    }
+  }
 }
 
-/* Class to Hide stuffs */
+/* Create Class to Hide stuffs */
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
   width: 1px;
@@ -62,5 +94,20 @@ html, body, #root {
   overflow: hidden;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  white-space: nowrap;  
+  white-space: nowrap;
+}
+
+/* Spacing */
+.my-spacing-1 {
+  padding-left: calc(18 / 16 * 1rem);
+  padding-right: calc(18 / 16 * 1rem);
+  padding-top: calc(36 / 16 * 1rem);
+  padding-bottom: calc(36 / 16 * 1rem);
+}
+
+.my-shadow-test {
+  box-shadow:
+    0 4px 5px 0 hsl(var(--my-dark-color) / 0.14),
+    0 1px 10px 0 hsl(var(--my-dark-color) / 0.12),
+    0 2px 4px -1px hsl(var(--my-dark-color) / 0.2);
 }
