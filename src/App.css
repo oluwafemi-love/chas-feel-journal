@@ -1,0 +1,8 @@
+.main-and-sidebar-wrapper{
+  display: flex;
+}
+
+/* Todo: For Mobile: 
+1. Make Sidebar Shrink to Icons only. 
+2. Make Main Display on a Single Grid 
+*/

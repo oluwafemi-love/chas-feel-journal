@@ -10,6 +10,11 @@ export const Route = createFileRoute('/MyJournals/')({
 })
 
 function RouteComponent() {
-  return <DisplayMyJournals />
+  return (
+    <>
+      <DisplayMyJournals />
+    </>
+
+  )
 }
 

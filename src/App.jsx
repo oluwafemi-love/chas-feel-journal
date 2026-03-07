@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import ALL_USERS from "./data/AllUsers";
 import ALL_JOURNALS from "./data/AllJournals";
+import DisplayMyJournals from "./routes/MyJournals/DisplayMyJournals";
 
 const currentUserId = "u-9f33x";
 
@@ -29,28 +30,29 @@ function App() {
       <Header
         onToggleSidebar={() => setSidebarOpen((prev) => !prev)}
       />
-      <Sidebar sidebarIsOpen={sidebarOpen} />
-      <main className="px-4.5 py-8">
-        <h1> Welcome {currentUser?.displayName || null},</h1>
+      <div className="main-and-sidebar-wrapper">
+        <Sidebar sidebarIsOpen={sidebarOpen} />
+        <main className="h-full px-4.5 py-8">
+          <h1 className="mb-4"> Welcome {currentUser?.displayName || null},</h1>
 
-        {hasLogin && !hasCreatedJournal && (
-          <div>{notYetCreatedAJournalMessage}</div>
-        )}
+          {hasLogin && !hasCreatedJournal && (
+            <div>{notYetCreatedAJournalMessage}</div>
+          )}
 
-        {hasLogin && hasCreatedJournal && (
-          <div>
-            {userJournals.map((journal) => (
-              <div key={journal.id}> {journal.title} </div>
-            ))}
-          </div>
-        )}
+          {hasLogin && hasCreatedJournal && (
 
-        {!hasLogin && (
-          <div>
-            Please, login or create an account to sync your details
-          </div>
-        )}
-      </main>
+              <DisplayMyJournals />
+              /* Todo: DisplayMyJournals is showing Journals for all users, it should only show Journals for a specific user */
+
+          )}
+
+          {!hasLogin && (
+            <div>
+              Please, login or create an account to sync your details
+            </div>
+          )}
+        </main>
+      </div>
     </>
   );
 }

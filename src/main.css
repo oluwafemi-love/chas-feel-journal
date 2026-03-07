@@ -10,6 +10,7 @@ body,
 }
 
 #root {
+  height: auto;
   /* Colors: */
   --my-dark-color: 0deg 0% 0%;
   --my-dark-color-l1: 0deg 0% 10%;
@@ -110,4 +111,16 @@ body,
     0 4px 5px 0 hsl(var(--my-dark-color) / 0.14),
     0 1px 10px 0 hsl(var(--my-dark-color) / 0.12),
     0 2px 4px -1px hsl(var(--my-dark-color) / 0.2);
+}
+
+/* For Responsiveness */
+
+/* Specific for Tablet */
+/* 768px = 48rem, 1023px = 63.9375rem */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+}
+
+/* Desktop */
+/* 1200px = 75rem */
+@media (min-width: 75rem) {
 }
