@@ -1,0 +1,21 @@
+/* Mobile 2*2 */
+.my-journals-wrapper {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/*Tablet: 4*4 */
+@media (min-width: calc( 660 / 16 * 1rem)) and (max-width: calc(1199 / 16 * 1rem)) {
+  .my-journals-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop: As much as it can */
+@media (min-width: calc(1200 / 16 * 1rem)) {
+  .my-journals-wrapper {
+    min-width: 1056px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+}

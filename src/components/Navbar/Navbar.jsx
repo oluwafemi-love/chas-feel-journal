@@ -22,9 +22,3 @@ function Navbar({ onToggleSidebar }) {
 }
 
 export default Navbar;
-
-// function toggleSideBar(sideBar) {
-//   if (sideBar.classList.contains("visually-hidden")) {
-//     sideBar.classList.toggle("visually-hidden");
-//   }
-// }

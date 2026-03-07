@@ -75,6 +75,163 @@ const ALL_JOURNALS = [
     createdAt: "2026-02-15T07:21:10.000Z",
     updatedAt: "2026-02-15T07:25:40.000Z",
   },
+
+  {
+    id: "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
+    userId: "u-1a92fk",
+    title: "Rough Morning",
+    content: {
+      text: "I woke up feeling anxious about the presentation.",
+      transcript: "i woke up feeling anxious about the presentation",
+    },
+    media: {
+      image: [
+        "https://storage.app/images/journal/rough-morning-1.jpg",
+      ],
+    },
+    mood: {
+      primary: "anxious",
+      intensity: 4,
+    },
+    tags: ["presentation", "career"],
+    metadata: {
+      isFavorite: false,
+      source: "voice",
+      wordCount: 9,
+    },
+    createdAt: "2026-02-15T07:21:10.000Z",
+    updatedAt: "2026-02-15T07:25:40.000Z",
+  },
+  {
+    id: "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
+    userId: "u-1a92fj",
+    title: "Rough Morning",
+    content: {
+      text: "I woke up feeling anxious about the presentation.",
+      transcript: "i woke up feeling anxious about the presentation",
+    },
+    media: {
+      image: [
+        "https://storage.app/images/journal/rough-morning-1.jpg",
+      ],
+    },
+    mood: {
+      primary: "anxious",
+      intensity: 4,
+    },
+    tags: ["presentation", "career"],
+    metadata: {
+      isFavorite: false,
+      source: "voice",
+      wordCount: 9,
+    },
+    createdAt: "2026-02-15T07:21:10.000Z",
+    updatedAt: "2026-02-15T07:25:40.000Z",
+  },
+  {
+    id: "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
+    userId: "u-1a92fj",
+    title: "Rough Morning",
+    content: {
+      text: "I woke up feeling anxious about the presentation.",
+      transcript: "i woke up feeling anxious about the presentation",
+    },
+    media: {
+      image: [
+        "https://storage.app/images/journal/rough-morning-1.jpg",
+      ],
+    },
+    mood: {
+      primary: "anxious",
+      intensity: 4,
+    },
+    tags: ["presentation", "career"],
+    metadata: {
+      isFavorite: false,
+      source: "voice",
+      wordCount: 9,
+    },
+    createdAt: "2026-02-15T07:21:10.000Z",
+    updatedAt: "2026-02-15T07:25:40.000Z",
+  },
+  {
+    id: "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
+    userId: "u-1a92fj",
+    title: "Rough Morning",
+    content: {
+      text: "I woke up feeling anxious about the presentation.",
+      transcript: "i woke up feeling anxious about the presentation",
+    },
+    media: {
+      image: [
+        "https://storage.app/images/journal/rough-morning-1.jpg",
+      ],
+    },
+    mood: {
+      primary: "anxious",
+      intensity: 4,
+    },
+    tags: ["presentation", "career"],
+    metadata: {
+      isFavorite: false,
+      source: "voice",
+      wordCount: 9,
+    },
+    createdAt: "2026-02-15T07:21:10.000Z",
+    updatedAt: "2026-02-15T07:25:40.000Z",
+  },
+  {
+    id: "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
+    userId: "u-1a92fj",
+    title: "Rough Morning",
+    content: {
+      text: "I woke up feeling anxious about the presentation.",
+      transcript: "i woke up feeling anxious about the presentation",
+    },
+    media: {
+      image: [
+        "https://storage.app/images/journal/rough-morning-1.jpg",
+      ],
+    },
+    mood: {
+      primary: "anxious",
+      intensity: 4,
+    },
+    tags: ["presentation", "career"],
+    metadata: {
+      isFavorite: false,
+      source: "voice",
+      wordCount: 9,
+    },
+    createdAt: "2026-02-15T07:21:10.000Z",
+    updatedAt: "2026-02-15T07:25:40.000Z",
+  },
+  {
+    id: "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
+    userId: "u-1a92fj",
+    title: "Rough Morning",
+    content: {
+      text: "I woke up feeling anxious about the presentation.",
+      transcript: "i woke up feeling anxious about the presentation",
+    },
+    media: {
+      image: [
+        "https://storage.app/images/journal/rough-morning-1.jpg",
+      ],
+    },
+    mood: {
+      primary: "anxious",
+      intensity: 4,
+    },
+    tags: ["presentation", "career"],
+    metadata: {
+      isFavorite: false,
+      source: "voice",
+      wordCount: 9,
+    },
+    createdAt: "2026-02-15T07:21:10.000Z",
+    updatedAt: "2026-02-15T07:25:40.000Z",
+  },
 ];
 
 export default ALL_JOURNALS;
