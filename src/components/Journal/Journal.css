@@ -1,5 +1,4 @@
 .single-journal-wrapper{
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -25,6 +24,6 @@
 /* Desktop */
 @media (min-width: calc(1200 / 16 * 1rem)) {
   .single-journal-wrapper{
-    width: calc(170 / 16 * 1rem);
+    min-width: calc(170 / 16 * 1rem);
   }
 }

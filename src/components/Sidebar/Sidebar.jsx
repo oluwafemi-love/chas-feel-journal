@@ -19,18 +19,26 @@ function Sidebar({ sidebarIsOpen }) {
             </li>
           </Link>
 
-          <li>
-            {icons.sendMessageIcon()}
-            <span href="#quotes">Quotes</span>
-          </li>
-          <li>
-            {icons.likeHeartIcon()}
-            <span href="#favourites">Favourites</span>
-          </li>
-          <li>
-            {icons.trashBinIcon()}
-            <span href="#bin">Dumps</span>
-          </li>
+          <Link to="/QuotesPage/">
+            <li>
+              {icons.sendMessageIcon()}
+              <span href="#quotes">Quotes</span>
+            </li>
+          </Link>
+
+          <Link to="/MyFavourites/">
+            <li>
+              {icons.likeHeartIcon()}
+              <span href="#favourites">Favourites</span>
+            </li>
+          </Link>
+
+          <Link to="/Trashs/">
+            <li>
+              {icons.trashBinIcon()}
+              <span href="#bin">Dumps</span>
+            </li>
+          </Link>
         </ul>
       </div>
     </>

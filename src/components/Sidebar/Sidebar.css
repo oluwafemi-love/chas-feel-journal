@@ -1,9 +1,11 @@
 .sidebar-menu {
   width: calc(250 / 16 * 1rem);
-  min-width: fit-content;
-  height: 100vh;
+  /* min-width: fit-content; */
+  /* height: 100vh; */
   background-color: hsl(var(--my-shade-color-l1));
   padding: 12px;
+  transition: width 0.2s ease;
+  overflow: hidden;
 
   li:focus {
     background-color: hsl(var(--my-accent-color-l1));
@@ -35,4 +37,8 @@
       color: hsl(var(--my-gray-color-l1));
     }
   }
+}
+
+.sidebar-menu.visually-hidden {
+  /* width: 0; */
 }

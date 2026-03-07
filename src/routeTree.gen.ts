@@ -10,13 +10,26 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TrashsIndexRouteImport } from './routes/Trashs/index'
+import { Route as QuotesPageIndexRouteImport } from './routes/QuotesPage/index'
 import { Route as ProfilePageIndexRouteImport } from './routes/ProfilePage/index'
 import { Route as MyJournalsIndexRouteImport } from './routes/MyJournals/index'
+import { Route as MyFavouritesIndexRouteImport } from './routes/MyFavourites/index'
 import { Route as MyJournalsJournalInDetailJournalIdRouteImport } from './routes/MyJournals/$journal-in-detail/$journalId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrashsIndexRoute = TrashsIndexRouteImport.update({
+  id: '/Trashs/',
+  path: '/Trashs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuotesPageIndexRoute = QuotesPageIndexRouteImport.update({
+  id: '/QuotesPage/',
+  path: '/QuotesPage/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfilePageIndexRoute = ProfilePageIndexRouteImport.update({
@@ -29,6 +42,11 @@ const MyJournalsIndexRoute = MyJournalsIndexRouteImport.update({
   path: '/MyJournals/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyFavouritesIndexRoute = MyFavouritesIndexRouteImport.update({
+  id: '/MyFavourites/',
+  path: '/MyFavourites/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MyJournalsJournalInDetailJournalIdRoute =
   MyJournalsJournalInDetailJournalIdRouteImport.update({
     id: '/MyJournals/$journal-in-detail/$journalId',
@@ -38,48 +56,69 @@ const MyJournalsJournalInDetailJournalIdRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/MyFavourites/': typeof MyFavouritesIndexRoute
   '/MyJournals/': typeof MyJournalsIndexRoute
   '/ProfilePage/': typeof ProfilePageIndexRoute
+  '/QuotesPage/': typeof QuotesPageIndexRoute
+  '/Trashs/': typeof TrashsIndexRoute
   '/MyJournals/$journal-in-detail/$journalId': typeof MyJournalsJournalInDetailJournalIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/MyFavourites': typeof MyFavouritesIndexRoute
   '/MyJournals': typeof MyJournalsIndexRoute
   '/ProfilePage': typeof ProfilePageIndexRoute
+  '/QuotesPage': typeof QuotesPageIndexRoute
+  '/Trashs': typeof TrashsIndexRoute
   '/MyJournals/$journal-in-detail/$journalId': typeof MyJournalsJournalInDetailJournalIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/MyFavourites/': typeof MyFavouritesIndexRoute
   '/MyJournals/': typeof MyJournalsIndexRoute
   '/ProfilePage/': typeof ProfilePageIndexRoute
+  '/QuotesPage/': typeof QuotesPageIndexRoute
+  '/Trashs/': typeof TrashsIndexRoute
   '/MyJournals/$journal-in-detail/$journalId': typeof MyJournalsJournalInDetailJournalIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/MyFavourites/'
     | '/MyJournals/'
     | '/ProfilePage/'
+    | '/QuotesPage/'
+    | '/Trashs/'
     | '/MyJournals/$journal-in-detail/$journalId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/MyFavourites'
     | '/MyJournals'
     | '/ProfilePage'
+    | '/QuotesPage'
+    | '/Trashs'
     | '/MyJournals/$journal-in-detail/$journalId'
   id:
     | '__root__'
     | '/'
+    | '/MyFavourites/'
     | '/MyJournals/'
     | '/ProfilePage/'
+    | '/QuotesPage/'
+    | '/Trashs/'
     | '/MyJournals/$journal-in-detail/$journalId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MyFavouritesIndexRoute: typeof MyFavouritesIndexRoute
   MyJournalsIndexRoute: typeof MyJournalsIndexRoute
   ProfilePageIndexRoute: typeof ProfilePageIndexRoute
+  QuotesPageIndexRoute: typeof QuotesPageIndexRoute
+  TrashsIndexRoute: typeof TrashsIndexRoute
   MyJournalsJournalInDetailJournalIdRoute: typeof MyJournalsJournalInDetailJournalIdRoute
 }
 
@@ -90,6 +129,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/Trashs/': {
+      id: '/Trashs/'
+      path: '/Trashs'
+      fullPath: '/Trashs/'
+      preLoaderRoute: typeof TrashsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/QuotesPage/': {
+      id: '/QuotesPage/'
+      path: '/QuotesPage'
+      fullPath: '/QuotesPage/'
+      preLoaderRoute: typeof QuotesPageIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ProfilePage/': {
@@ -106,6 +159,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MyJournalsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/MyFavourites/': {
+      id: '/MyFavourites/'
+      path: '/MyFavourites'
+      fullPath: '/MyFavourites/'
+      preLoaderRoute: typeof MyFavouritesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/MyJournals/$journal-in-detail/$journalId': {
       id: '/MyJournals/$journal-in-detail/$journalId'
       path: '/MyJournals/$journal-in-detail/$journalId'
@@ -118,8 +178,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MyFavouritesIndexRoute: MyFavouritesIndexRoute,
   MyJournalsIndexRoute: MyJournalsIndexRoute,
   ProfilePageIndexRoute: ProfilePageIndexRoute,
+  QuotesPageIndexRoute: QuotesPageIndexRoute,
+  TrashsIndexRoute: TrashsIndexRoute,
   MyJournalsJournalInDetailJournalIdRoute:
     MyJournalsJournalInDetailJournalIdRoute,
 }
