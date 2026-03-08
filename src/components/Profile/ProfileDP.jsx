@@ -5,7 +5,7 @@ import { Link } from "@tanstack/react-router";
 function ProfileDP( {imageSource} ) {
   console.log("Received:", imageSource);
   return (
-    <Link to={"ProfilePage"}>
+    <Link to={"/ProfilePage/"}>
       <img src={"https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_1_oxcwq4.png"} alt="Your display avatar" />
     </Link>
   );
