@@ -1,25 +1,24 @@
 import React from "react";
 import ALL_USERS from "../../data/AllUsers";
-import ALL_JOURNALS from "../../data/AllJournals";
 import DisplayMyJournals from "../../routes/MyJournals/DisplayMyJournals";
+import { useJournals } from "../../context/JournalContext";
 
 const currentUserId = "u-9f33x";
-
 const currentUser = ALL_USERS.find(
   (user) => user.id === currentUserId,
 );
-const userJournals = ALL_JOURNALS.filter(
-  (journal) => journal.userId === currentUserId,
-);
 
-const hasLogin = !!currentUser; //Instead of  if (currentUser){ hasLogin = true;}
-const hasCreatedJournal = userJournals.length > 0;
 
-const notYetCreatedAJournalMessage = `
-    When you add a note, it will appear here...  
-  `;
 
 function Welcome() {
+  const { journals } = useJournals();
+  const userJournals = journals.filter(
+    (j) => j.userId === currentUserId,
+  );
+
+  const hasLogin = !!currentUser; //Instead of  if (currentUser){ hasLogin = true;}
+  const hasCreatedJournal = userJournals.length > 0;
+
   return (
     <>
       <h1 className="mb-4">
@@ -28,12 +27,11 @@ function Welcome() {
       </h1>
 
       {hasLogin && !hasCreatedJournal && (
-        <div>{notYetCreatedAJournalMessage}</div>
+        <div>When you add a note, it will appear here...</div>
       )}
 
       {hasLogin && hasCreatedJournal && (
         <DisplayMyJournals />
-        /* Todo: DisplayMyJournals is showing Journals for all users, it should only show Journals for a specific user */
       )}
 
       {!hasLogin && (

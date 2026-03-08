@@ -1,13 +1,95 @@
-import React from 'react'
-import icons from '../../constants/icons'
+import React from "react";
+import icons from "../../constants/icons";
+import * as Dialog from "@radix-ui/react-dialog";
+import { useJournals } from "../../context/JournalContext";
 
-function AddJournalByText({size, backgroundColor, color, outline}) {
+const currentUserId = "u-9f33x";
+
+function AddJournalByText({ size, backgroundColor, color, outline }) {
+  const { addJournal } = useJournals();
+  const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
+
+  function handleSave() {
+    if (!text.trim()) return;
+    addJournal({ title, text, userId: currentUserId });
+    setTitle("");
+    setText("");
+    setOpen(false);
+  }
+
+  function handleCancel() {
+    setTitle("");
+    setText("");
+    setOpen(false);
+  }
+
+  const triggerStyles = {
+    fontSize: size,
+    backgroundColor,
+    color,
+    outline: outline ? `2px solid ${outline}` : undefined,
+  };
+
   return (
-    <button>
-      {icons.writeTextIcon}
-      <span className='visually-hidden'>Add Journal By Text</span>
-    </button>
-  )
+    <Dialog.Root open={open} onOpenChange={setOpen}>
+      <Dialog.Trigger asChild>
+        <button className="add-journal-trigger" style={triggerStyles}>
+          {icons.writeTextIcon}
+          <span className="visually-hidden">Add Journal By Text</span>
+        </button>
+      </Dialog.Trigger>
+
+      <Dialog.Portal>
+        <Dialog.Overlay className="dialog-overlay" />
+        <Dialog.Content className="dialog-content">
+          <Dialog.Title className="dialog-title">
+            New Journal Entry
+          </Dialog.Title>
+
+          <input
+            className="dialog-input"
+            type="text"
+            placeholder="Title (optional)"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+
+          <textarea
+            className="dialog-textarea"
+            placeholder="What's on your mind?"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            rows={8}
+            autoFocus
+          />
+
+          <div className="dialog-actions">
+            <button
+              className="dialog-btn-cancel"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
+            <button
+              className="dialog-btn-save"
+              onClick={handleSave}
+              disabled={!text.trim()}
+            >
+              Save
+            </button>
+          </div>
+
+          <Dialog.Close asChild>
+            <button className="dialog-close-x" aria-label="Close">
+              ✕
+            </button>
+          </Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
 }
 
-export default AddJournalByText
+export default AddJournalByText;
