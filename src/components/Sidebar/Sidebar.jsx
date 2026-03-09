@@ -10,7 +10,10 @@ function Sidebar({ sidebarIsOpen }) {
       <div
         className={`sidebar-menu ${sidebarIsOpen ? "" : "visually-hidden"}`}
       >
-        <AppLogo />
+        <Link to="/">
+          <AppLogo />
+        </Link>
+
         <ul>
           <Link to="/MyJournals/">
             <li>

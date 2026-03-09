@@ -12,7 +12,7 @@ function RouteComponent() {
   return (
     <>
       <DisplayMyJournals />
-      {/* Todo: If it is mobile use floating button, if it is tablet use DynamicInputCombo */}
+      {/* Todo: If it is mobile use floating button, if it is tablet / desktop use DynamicInputCombo */}
       <FloatingButtons />
     </>
 
