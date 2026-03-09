@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
+import ALL_USERS from "../../data/AllUsers";
+
+const currentUserId = "u-9f33x";
+const currentUser = ALL_USERS.find(
+  (user) => user.id === currentUserId,
+);
 
 // Profile Page Component
-function ProfileDP( {imageSource} ) {
-  console.log("Received:", imageSource);
+function ProfileDP() {
   return (
     <Link to={"/ProfilePage/"}>
-      <img src={"https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_1_oxcwq4.png"} alt="Your display avatar" />
+      <img src={currentUser.displayPicture} alt="Your display avatar" />
     </Link>
   );
 }

@@ -37,7 +37,7 @@ function AddJournalByText({ size, backgroundColor, color, outline }) {
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <button className="add-journal-trigger" style={triggerStyles}>
-          {icons.writeTextIcon}
+          {icons.writeTextIcon()}
           <span className="visually-hidden">Add Journal By Text</span>
         </button>
       </Dialog.Trigger>

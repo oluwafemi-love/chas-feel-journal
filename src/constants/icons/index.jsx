@@ -114,9 +114,9 @@ const writeTextIcon = () => (
     <path
       d="M3.29418 18.5583L2.00006 24L7.17653 22.6395L22.1702 6.87784C22.6554 6.36762 22.928 5.67569 22.928 4.95423C22.928 4.23276 22.6554 3.54084 22.1702 3.03061L21.9476 2.79662C21.4622 2.28654 20.804 2 20.1177 2C19.4314 2 18.7732 2.28654 18.2878 2.79662L3.29418 18.5583Z"
       stroke="black"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M3.29418 18.6041L2.00006 24.0457L7.17653 22.6853L20.1177 9.08123L16.2354 5L3.29418 18.6041Z"
@@ -125,9 +125,9 @@ const writeTextIcon = () => (
     <path
       d="M16.2353 5L20.1177 9.08123M13.6471 24.0457H24"
       stroke="black"
-      stroke-width="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

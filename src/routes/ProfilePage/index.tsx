@@ -17,23 +17,26 @@ function RouteComponent() {
   return <ProfilePage />
 }
 
-const userInfo = ALL_USERS[1]
+const currentUserId = "u-9f33x";
+const currentUser = ALL_USERS.find(
+  (user) => user.id === currentUserId,
+);
 
 
 function ProfilePage() {
   return (
     <div className="profile-wrapper">
-      <div>{userInfo.email}</div>
+      <div>{currentUser.email}</div>
 
       <div className="set-dp-wrapper">
-        <ProfileDP imageSource={userInfo.displayPicture}/>
+        <ProfileDP/>
         
         <EditProfileDP />
       </div>
 
-      <div>Hi {userInfo.displayName}!</div>
+      <div>Hi {currentUser.displayName}!</div>
 
-      <p>{userInfo ? `signed in as ${userInfo.displayName}` : 'Sign in to save your data'}</p>
+      <p>{currentUser ? `signed in as ${currentUser.displayName}` : 'Sign in to save your data'}</p>
 
       <ChangeColor />
 

@@ -1,9 +1,7 @@
 import React from 'react'
-import { Link } from "@tanstack/react-router";
 import { createFileRoute } from '@tanstack/react-router'
 import DisplayMyJournals from './DisplayMyJournals';
-import AddJournalByText from '../../components/AddJournalByText/AddJournalByText';
-
+import FloatingButtons  from '../../components/FloatingButtons/FloatingButtons'
 
 
 export const Route = createFileRoute('/MyJournals/')({
@@ -14,8 +12,8 @@ function RouteComponent() {
   return (
     <>
       <DisplayMyJournals />
-      <div>Hello</div>
-      <AddJournalByText size="1rem" backgroundColor="#000" color="#fff"/>
+      {/* Todo: If it is mobile use floating button, if it is tablet use DynamicInputCombo */}
+      <FloatingButtons />
     </>
 
   )

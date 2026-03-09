@@ -5,7 +5,7 @@ function ViewQuotes() {
   return (
     <button>
       <div>
-        {icons.quoteIcon}
+        {icons.quoteIcon()}
         <span className='visually-hidden'>View Quotes</span>
       </div>
     </button>
