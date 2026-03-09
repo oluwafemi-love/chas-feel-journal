@@ -2,6 +2,7 @@ import React from "react";
 import ALL_USERS from "../../data/AllUsers";
 import DisplayMyJournals from "../../routes/MyJournals/DisplayMyJournals";
 import { useJournals } from "../../context/JournalContext";
+import FloatingButtons from "../FloatingButtons/FloatingButtons"
 
 const currentUserId = "u-9f33x";
 const currentUser = ALL_USERS.find(
@@ -39,6 +40,8 @@ function Welcome() {
           Please, login or create an account to sync your details
         </div>
       )}
+
+      <FloatingButtons />
     </>
   );
 }
