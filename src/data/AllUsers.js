@@ -1,9 +1,9 @@
 const ALL_USERS = [
   {
     id: "u-1a92f",
-    email: null,
-    displayName: "Kyle",
-    displayPicture: "https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_1_oxcwq4.png",
+    email: "kyle.dev@gmail.com",
+    displayName: "Kyle XY",
+    displayPicture: "https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_3_rcpbwp.png",
     authProvider: "local",
     preferences: {
       theme: "system",
@@ -32,8 +32,8 @@ const ALL_USERS = [
   {
     id: "u-temp-7821",
     email: null,
-    displayName: null,
-    displayPicture: "https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_1_oxcwq4.png",
+    displayName: "Stranger Unknown",
+    displayPicture: "https://res.cloudinary.com/ds6na5t4s/image/upload/v1771252912/dp_user_2_dta6ei.png",
     authProvider: "anonymous",
     preferences: {
       theme: "light",

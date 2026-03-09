@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@tanstack/react-router";
 import ALL_USERS from "../../data/AllUsers";
 
-const currentUserId = "u-9f33x";
+const currentUserId = "u-1a92f";
 const currentUser = ALL_USERS.find(
   (user) => user.id === currentUserId,
 );

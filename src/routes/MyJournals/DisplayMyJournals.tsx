@@ -4,7 +4,7 @@ import { useJournals } from "../../context/JournalContext";
 import './DisplayMyJournals.css'
 
 
-const currentUserId = "u-9f33x"; 
+const currentUserId = "u-1a92f"; 
 
 function DisplayMyJournals() {
   const { journals } = useJournals();

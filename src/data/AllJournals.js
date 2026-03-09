@@ -51,7 +51,7 @@ const ALL_JOURNALS = [
 
   {
     id: "6a913b2f-d4c1-44a3-b2e7-9387c7e29211",
-    userId: "u-1a92f",
+    userId: "u-temp-7821",
     title: "Rough Morning",
     content: {
       text: "I woke up feeling anxious about the presentation.",
