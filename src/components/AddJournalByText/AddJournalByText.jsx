@@ -2,14 +2,15 @@ import React from "react";
 import icons from "../../constants/icons";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useJournals } from "../../context/JournalContext";
+import "./AddJournalByText.css";
 
 const currentUserId = "u-9f33x";
 
 function AddJournalByText({ size, backgroundColor, color, outline }) {
   const { addJournal } = useJournals();
-  const [open, setOpen] = useState(false);
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [open, setOpen] = React.useState(false);
+  const [title, setTitle] = React.useState("");
+  const [text, setText] = React.useState("");
 
   function handleSave() {
     if (!text.trim()) return;
@@ -44,12 +45,20 @@ function AddJournalByText({ size, backgroundColor, color, outline }) {
       <Dialog.Portal>
         <Dialog.Overlay className="dialog-overlay" />
         <Dialog.Content className="dialog-content">
-          <Dialog.Title className="dialog-title">
-            New Journal Entry
-          </Dialog.Title>
+          <div className="my-dialog-header-area">
+            <Dialog.Title className="dialog-title">
+              New Journal Entry
+            </Dialog.Title>
+
+            <Dialog.Close asChild>
+              <button className="dialog-close-x" aria-label="Close">
+                ✕
+              </button>
+            </Dialog.Close>
+          </div>
 
           <input
-            className="dialog-input"
+            className="dialog-input dialog-input-texti"
             type="text"
             placeholder="Title (optional)"
             value={title}
@@ -80,12 +89,6 @@ function AddJournalByText({ size, backgroundColor, color, outline }) {
               Save
             </button>
           </div>
-
-          <Dialog.Close asChild>
-            <button className="dialog-close-x" aria-label="Close">
-              ✕
-            </button>
-          </Dialog.Close>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
