@@ -1,0 +1,16 @@
+.add-journal-by-speech-trigger {
+  width: 40px;
+  height: 40px;
+  color: hsl(var(--my-dark-color));
+
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(var(--my-gray-color)/0.2);
+    color: hsl(var(--my-light-color)/0.7);
+  }
+
+  .button-content-speech {
+    display: flex;
+    justify-content: center;
+  }
+}

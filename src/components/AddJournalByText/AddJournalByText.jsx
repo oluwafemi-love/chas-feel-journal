@@ -6,7 +6,7 @@ import "./AddJournalByText.css";
 
 const currentUserId = "u-9f33x";
 
-function AddJournalByText({ size, backgroundColor, color, outline }) {
+function AddJournalByText() {
   const { addJournal } = useJournals();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -26,19 +26,23 @@ function AddJournalByText({ size, backgroundColor, color, outline }) {
     setOpen(false);
   }
 
-  const triggerStyles = {
-    fontSize: size,
-    backgroundColor,
-    color,
-    outline: outline ? `2px solid ${outline}` : undefined,
-  };
+  // const triggerStyles = {
+  //   fontSize: size,
+  //   backgroundColor,
+  //   color,
+  //   outline: outline ? `2px solid ${outline}` : undefined,
+  // };
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
-        <button className="add-journal-trigger" style={triggerStyles}>
-          {icons.writeTextIcon()}
-          <span className="visually-hidden">Add Journal By Text</span>
+        <button className="add-journal-trigger">
+          <div className="button-content-text">
+            {icons.writeTextIcon()}
+            <span className="visually-hidden">
+              Add Journal By Text
+            </span>
+          </div>
         </button>
       </Dialog.Trigger>
 
