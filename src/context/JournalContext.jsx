@@ -1,10 +1,24 @@
-import React, { createContext, useContext, useState } from "react";
-import ALL_JOURNALS from "../data/AllJournals"; // seeds initial data
+import React, { createContext, useContext, useEffect } from "react";
+import ALL_JOURNALS from "../data/AllJournals"; 
 
 const JournalContext = createContext(null);
+const STORAGE_KEY = "app_journals";
 
 export function JournalProvider({ children }) {
-  const [journals, setJournals] = useState(ALL_JOURNALS);
+  const [journals, setJournals] = React.useState(()=>{
+    // On first load, check localStorage before falling back to static data
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : ALL_JOURNALS
+    } catch {
+      return ALL_JOURNALS
+    }
+  });
+
+  // When journals change, sync to localStorage
+  useEffect(()=>{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(journals));
+  }, [journals]);
 
   function addJournal({ title, text, userId }) {
     const now = new Date().toISOString();
@@ -30,6 +44,7 @@ export function JournalProvider({ children }) {
     };
 
     setJournals((prev) => [newEntry, ...prev]);
+    
   }
 
   function deleteJournal(id) {

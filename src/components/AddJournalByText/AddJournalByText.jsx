@@ -26,13 +26,6 @@ function AddJournalByText() {
     setOpen(false);
   }
 
-  // const triggerStyles = {
-  //   fontSize: size,
-  //   backgroundColor,
-  //   color,
-  //   outline: outline ? `2px solid ${outline}` : undefined,
-  // };
-
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
