@@ -4,7 +4,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { useJournals } from "../../context/JournalContext";
 import "./AddJournalByText.css";
 
-const currentUserId = "u-9f33x";
+const currentUserId = "u-1a92f";
 
 function AddJournalByText() {
   const { addJournal } = useJournals();

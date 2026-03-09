@@ -4,7 +4,7 @@ import DisplayMyJournals from "../../routes/MyJournals/DisplayMyJournals";
 import { useJournals } from "../../context/JournalContext";
 import FloatingButtons from "../FloatingButtons/FloatingButtons"
 
-const currentUserId = "u-9f33x";
+const currentUserId = "u-1a92f";
 const currentUser = ALL_USERS.find(
   (user) => user.id === currentUserId,
 );
