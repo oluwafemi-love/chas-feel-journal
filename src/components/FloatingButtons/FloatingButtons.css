@@ -1,0 +1,17 @@
+.floating-buttons-wrapper{
+  /* Look */
+  display: flex;
+  gap: 6px;
+  width: 140px;
+  background-color: hsl(var(--my-accent-color));
+  padding: 12px 8px;
+  border-radius: 32px;
+
+  /* Position */
+  position: absolute;
+  bottom: 0;
+  right:0;
+
+  /* Spacing */
+  margin: 10px;
+}

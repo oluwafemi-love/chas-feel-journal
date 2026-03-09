@@ -16,7 +16,7 @@ function Layout() {
         <Sidebar sidebarIsOpen={sidebarOpen} />
         <main className="content-area">
           <Outlet />
-          <TanStackRouterDevtools />
+          {/* <TanStackRouterDevtools /> */}
         </main>
       </div>
     </div>
