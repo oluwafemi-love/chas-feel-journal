@@ -5,7 +5,7 @@ import ViewQuotes from "../ViewQuotes/ViewQuotes";
 import "./FloatingButtons.css";
 
 function FloatingButtons() {
-  const [prefillText, setPrefillText] = useState(null);
+  const [prefillText, setPrefillText] = React.useState(null);
   return (
     <div className="floating-buttons-wrapper">
       <AddJournalByText

@@ -96,6 +96,7 @@ export function useSpeechRecorder() {
 
           const data = await response.json();
           // ⚠️ Adjust this path to match AppyHub's actual response shape
+          console.log("data recieved:", data)
           const finalTranscript = data?.text ?? data?.transcript ?? "";
           resolve(finalTranscript);
         } catch (err) {

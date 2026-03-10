@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import icons from "../../constants/icons";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useSpeechRecorder } from "../../hooks/useSpeechRecorder";
@@ -13,7 +13,7 @@ function AddJournalBySpeech({ onTranscriptReady }) {
     start,
     stop,
   } = useSpeechRecorder();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = React.useState(false);
 
   async function handleOpen() {
     setOpen(true);
@@ -33,12 +33,6 @@ function AddJournalBySpeech({ onTranscriptReady }) {
     setOpen(false);
   }
 
-  // const triggerStyles = {
-  //   fontSize: size,
-  //   backgroundColor,
-  //   color,
-  //   outline: outline ? `2px solid ${outline}` : undefined,
-  // };
 
   return (
     <>
