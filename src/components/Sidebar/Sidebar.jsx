@@ -39,7 +39,7 @@ function Sidebar({ sidebarIsOpen }) {
           <Link to="/Trashs/">
             <li>
               {icons.trashBinIcon()}
-              <span href="#bin">Dumps</span>
+              <span href="#bin">Trash</span>
             </li>
           </Link>
         </ul>
