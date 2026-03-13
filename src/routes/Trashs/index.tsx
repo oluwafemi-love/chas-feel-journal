@@ -11,7 +11,7 @@ function RouteComponent() {
 
   return (
     <div className="p-8 bg-[#0a0505] min-h-screen text-white">
-      <header className="mb-10 text-right"> {/* راست‌چین برای هماهنگی با محتوا */}
+      <header className="mb-10 text-right">
         <h1 className="text-3xl font-bold">Trash</h1>
         <p className="text-gray-500 mt-2">Recently deleted notes.</p>
       </header>

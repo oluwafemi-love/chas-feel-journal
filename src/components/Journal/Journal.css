@@ -18,7 +18,7 @@
   border-color: hsl(var(--my-shade-color-l2));
 }
 
-/* ردیف بالا شامل تاریخ و دکمه‌ها */
+
 .journal-header {
   display: flex;
   justify-content: space-between;
@@ -32,7 +32,7 @@
   color: #888;
 }
 
-/* کانتینر دکمه‌های عملیاتی */
+
 .journal-actions {
   display: flex;
   gap: 12px;
@@ -44,7 +44,7 @@
   border: none;
   cursor: pointer;
   color: #555;
-  /* رنگ دکمه‌ها در حالت عادی */
+  
   padding: 4px;
   display: flex;
   align-items: center;
@@ -56,23 +56,18 @@
   fill: currentColor;
 }
 
-/* استایل مخصوص دکمه لایک */
 .action-button.is-favorite {
   color: #ff4b4b;
-  /* قرمز */
 }
 
 .action-button:hover {
   transform: scale(1.15);
 }
 
-/* استایل مخصوص دکمه حذف */
 .delete-button:hover {
   color: #ffb700;
-  /* نارنجی یا زرد تیره هنگام نگه داشتن موس */
 }
 
-/* استایل متن‌های کارت */
 .single-journal-wrapper h1 {
   margin: 0;
   font-size: 1.2rem;
