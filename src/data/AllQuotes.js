@@ -25,4 +25,31 @@ export const ALL_QUOTES = [
     source: "user",
     createdAt: "2026-02-10T12:45:10.000Z",
   },
+
+  {
+    id: "q-004",
+    text: "The only way to do great work is to love what you do.",
+    author: "Steve Jobs",
+    category: "motivation",
+    source: "system",
+    createdAt: "2026-03-12T10:00:00.000Z",
+  },
+
+  {
+    id: "q-005",
+    text: "Believe you can and you're halfway there.",
+    author: "Theodore Roosevelt",
+    category: "wisdom",
+    source: "system",
+    createdAt: "2026-03-12T11:00:00.000Z",
+  },
+  
+  {
+    id: "q-006",
+    text: "It does not matter how slowly you go as long as you do not stop.",
+    author: "Confucius",
+    category: "perseverance",
+    source: "system",
+    createdAt: "2026-03-12T12:00:00.000Z",
+  },
 ];
