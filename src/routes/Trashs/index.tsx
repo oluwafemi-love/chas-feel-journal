@@ -44,4 +44,3 @@ function RouteComponent() {
     </div>
   );
 }
-
