@@ -5,7 +5,8 @@ import { useSpeechRecorder } from "../../hooks/useSpeechRecorder";
 import "./AddJournalBySpeech.css";
 
 function AddJournalBySpeech({ onTranscriptReady }) {
-  const { isRecording, isProcessing, error, start, stop } = useSpeechRecorder();
+  const { isRecording, isProcessing, error, start, stop } =
+    useSpeechRecorder();
   const [open, setOpen] = React.useState(false);
 
   async function handleOpen() {
@@ -35,7 +36,9 @@ function AddJournalBySpeech({ onTranscriptReady }) {
       >
         <div className="button-content-speech">
           {icons.micIcon()}
-          <span className="visually-hidden">Add Journal By Speech</span>
+          <span className="visually-hidden">
+            Add Journal By Speech
+          </span>
         </div>
       </button>
 
@@ -46,6 +49,10 @@ function AddJournalBySpeech({ onTranscriptReady }) {
             <Dialog.Title className="dialog-title">
               {isProcessing ? "Transcribing..." : "Recording..."}
             </Dialog.Title>
+
+            <Dialog.Description className="visually-hidden">
+              Recording your voice. Click Finish when done speaking.
+            </Dialog.Description>
 
             {isRecording && !isProcessing && (
               <div className="recording-indicator">
@@ -62,7 +69,10 @@ function AddJournalBySpeech({ onTranscriptReady }) {
             {error && <div className="transcript-error">{error}</div>}
 
             <div className="dialog-actions by-speech-dialog-actions">
-              <button className="dialog-btn-cancel" onClick={handleCancel}>
+              <button
+                className="dialog-btn-cancel"
+                onClick={handleCancel}
+              >
                 Cancel
               </button>
               <button
