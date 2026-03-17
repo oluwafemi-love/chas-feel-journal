@@ -62,7 +62,7 @@ function AddJournalBySpeech({ onTranscriptReady }) {
 
             {isProcessing && (
               <div className="processing-indicator">
-                Be happy; the audio is being transcribed...
+                Be happy -- the audio is being transcribed...
               </div>
             )}
 
