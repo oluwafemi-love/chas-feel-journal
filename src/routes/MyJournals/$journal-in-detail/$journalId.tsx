@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import ALL_JOURNALS from '../../../data/AllJournals'
 import { useJournals } from '../../../context/JournalContext'
 
 export const Route = createFileRoute('/MyJournals/$journal-in-detail/$journalId')({
@@ -8,7 +7,6 @@ export const Route = createFileRoute('/MyJournals/$journal-in-detail/$journalId'
 
 function JournalInDetail() {
  const {journalId} = Route.useParams()
-//  const journal = ALL_JOURNALS.find(theJournal => theJournal.id === journalId)
  const {journals} = useJournals();
  const journal = journals.find(theJournal => theJournal.id === journalId)
 
@@ -17,8 +15,16 @@ function JournalInDetail() {
 
  return(
   <div>
+    <div className="date-info">
+      <p>Date Created: <span></span></p>
+      <p>Last Edited: <span></span></p>
+    </div>
+
     <h1>{journal.title}</h1>
     <p>{journal.content.text}</p>
+
+    <EditJournal />
+
   </div>
  )
 }
