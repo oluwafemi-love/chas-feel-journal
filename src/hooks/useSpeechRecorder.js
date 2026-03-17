@@ -12,14 +12,27 @@ export function useSpeechRecorder() {
 
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
+  const mimeTypeRef = useRef("");
 
   const start = useCallback(async () => {
     setError(null);
     audioChunksRef.current = [];
 
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mediaRecorder = new MediaRecorder(stream);
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+      });
+
+      const mimeType = MediaRecorder.isTypeSupported(
+        "audio/ogg;codecs=opus",
+      )
+        ? "audio/ogg;codecs=opus"
+        : MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
+          ? "audio/webm;codecs=opus"
+          : "audio/wav";
+
+      mimeTypeRef.current = mimeType;
+      const mediaRecorder = new MediaRecorder(stream, { mimeType });
       mediaRecorderRef.current = mediaRecorder;
 
       mediaRecorder.ondataavailable = (e) => {
@@ -43,10 +56,26 @@ export function useSpeechRecorder() {
       mediaRecorder.onstop = async () => {
         setIsProcessing(true);
         try {
-          const blob = new Blob(audioChunksRef.current, { type: "audio/wav" });
+          const mimeType = mimeTypeRef.current;
+          const extension = mimeType.includes("ogg")
+            ? "ogg"
+            : mimeType.includes("webm")
+              ? "webm"
+              : "wav";
+
+          const blob = new Blob(audioChunksRef.current, {
+            type: mimeType,
+          });
           const formData = new FormData();
-          formData.append("file", blob, "recording.wav");
+          formData.append("file", blob, `recording.${extension}`);
           formData.append("language", LANGUAGE);
+
+          console.log(
+            "Sending format:",
+            mimeType,
+            "size:",
+            blob.size,
+          );
 
           const response = await fetch(APPYHUB_ENDPOINT, {
             method: "POST",
@@ -63,7 +92,7 @@ export function useSpeechRecorder() {
         } catch (err) {
           console.error("AppyHub error:", err);
           setError("Transcription failed. Please try again.");
-          resolve(null); 
+          resolve(null);
         } finally {
           setIsProcessing(false);
           mediaRecorder.stream.getTracks().forEach((t) => t.stop());
@@ -73,7 +102,7 @@ export function useSpeechRecorder() {
       mediaRecorder.stop();
       setIsRecording(false);
     });
-  }, []); 
+  }, []);
 
   return { isRecording, isProcessing, error, start, stop };
 }
