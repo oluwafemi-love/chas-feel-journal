@@ -6,11 +6,19 @@ import "./AddJournalByText.css";
 
 const currentUserId = "u-1a92f";
 
-function AddJournalByText() {
+function AddJournalByText({ prefillText, onClose }) {
   const { addJournal } = useJournals();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [text, setText] = React.useState("");
+
+  // Open automatically when a transcript is passed in
+  React.useEffect(() => {
+    if (prefillText) {
+      setText(prefillText);
+      setOpen(true);
+    }
+  }, [prefillText]);
 
   function handleSave() {
     if (!text.trim()) return;
@@ -24,6 +32,7 @@ function AddJournalByText() {
     setTitle("");
     setText("");
     setOpen(false);
+    onClose?.();
   }
 
   return (
@@ -53,6 +62,10 @@ function AddJournalByText() {
               </button>
             </Dialog.Close>
           </div>
+
+          <Dialog.Description className="visually-hidden">
+            Write your journal entry below. Title is optional.
+          </Dialog.Description>
 
           <input
             className="dialog-input dialog-input-texti"
