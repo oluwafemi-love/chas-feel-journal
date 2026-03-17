@@ -23,16 +23,18 @@ function AddJournalBySpeech({ onTranscriptReady }) {
   async function handleFinish() {
     const finalTranscript = await stop();
     setOpen(false);
-    if (finalTranscript) {
-      onTranscriptReady(finalTranscript); // hands off to AddJournalByText
-    }
+    // Give React one tick to close the speech dialog before opening text dialog
+    setTimeout(() => {
+      if (finalTranscript) {
+        onTranscriptReady(finalTranscript);
+      }
+    }, 100);
   }
 
   function handleCancel() {
     stop();
     setOpen(false);
   }
-
 
   return (
     <>

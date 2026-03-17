@@ -13,7 +13,10 @@ function FloatingButtons() {
         onClose={() => setPrefillText(null)}
       />
       <AddJournalBySpeech
-        onTranscriptReady={(transcript) => setPrefillText(transcript)}
+        onTranscriptReady={(transcript) => {
+          setPrefillText(null); // reset first
+          setTimeout(() => setPrefillText(transcript), 0); // then set new value
+        }}
       />
       <ViewQuotes />
     </div>

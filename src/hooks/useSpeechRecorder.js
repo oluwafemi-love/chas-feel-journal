@@ -1,7 +1,6 @@
 import { useState, useRef, useCallback } from "react";
 import { APPYHUB_CONFIG } from "../config/apiConfig";
 
-
 const APPYHUB_API_KEY = APPYHUB_CONFIG.TOKEN;
 const APPYHUB_ENDPOINT = APPYHUB_CONFIG.BASE_URL;
 const LANGUAGE = "en-US";
@@ -23,7 +22,9 @@ export function useSpeechRecorder() {
 
     // --- MediaRecorder (captures WAV for AppyHub) ---
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+      });
       const mediaRecorder = new MediaRecorder(stream);
       mediaRecorderRef.current = mediaRecorder;
 
@@ -50,7 +51,11 @@ export function useSpeechRecorder() {
       recognition.onresult = (event) => {
         let interim = "";
         let final = "";
-        for (let i = event.resultIndex; i < event.results.length; i++) {
+        for (
+          let i = event.resultIndex;
+          i < event.results.length;
+          i++
+        ) {
           const t = event.results[i][0].transcript;
           event.results[i].isFinal ? (final += t) : (interim += t);
         }
@@ -81,26 +86,30 @@ export function useSpeechRecorder() {
       mediaRecorder.onstop = async () => {
         setIsProcessing(true);
         try {
-          const blob = new Blob(audioChunksRef.current, { type: "audio/wav" });
+          const blob = new Blob(audioChunksRef.current, {
+            type: "audio/wav",
+          });
           const formData = new FormData();
           formData.append("file", blob, "recording.wav");
           formData.append("language", LANGUAGE);
 
           const response = await fetch(APPYHUB_ENDPOINT, {
             method: "POST",
-            headers: { Authorization: `Bearer ${APPYHUB_API_KEY}` },
+            headers: { "apy-token": `${APPYHUB_API_KEY}` },
             body: formData,
           });
 
           if (!response.ok) throw new Error("AppyHub request failed");
-
+          
           const data = await response.json();
-          // ⚠️ Adjust this path to match AppyHub's actual response shape
-          console.log("data recieved:", data)
-          const finalTranscript = data?.text ?? data?.transcript ?? "";
+          console.log("Full AppyHub response:", JSON.stringify(data));
+
+          const finalTranscript = data?.data ?? "";
           resolve(finalTranscript);
         } catch (err) {
-          setError("Transcription failed. You can still edit manually.");
+          setError(
+            "Transcription failed. You can still edit manually.",
+          );
           resolve(liveTranscript); // fall back to Web Speech draft
         } finally {
           setIsProcessing(false);
@@ -114,5 +123,12 @@ export function useSpeechRecorder() {
     });
   }, [liveTranscript]);
 
-  return { isRecording, liveTranscript, isProcessing, error, start, stop };
+  return {
+    isRecording,
+    liveTranscript,
+    isProcessing,
+    error,
+    start,
+    stop,
+  };
 }
