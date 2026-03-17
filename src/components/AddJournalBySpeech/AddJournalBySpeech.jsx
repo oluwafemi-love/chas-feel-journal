@@ -5,14 +5,7 @@ import { useSpeechRecorder } from "../../hooks/useSpeechRecorder";
 import "./AddJournalBySpeech.css";
 
 function AddJournalBySpeech({ onTranscriptReady }) {
-  const {
-    isRecording,
-    liveTranscript,
-    isProcessing,
-    error,
-    start,
-    stop,
-  } = useSpeechRecorder();
+  const { isRecording, isProcessing, error, start, stop } = useSpeechRecorder();
   const [open, setOpen] = React.useState(false);
 
   async function handleOpen() {
@@ -23,11 +16,8 @@ function AddJournalBySpeech({ onTranscriptReady }) {
   async function handleFinish() {
     const finalTranscript = await stop();
     setOpen(false);
-    // Give React one tick to close the speech dialog before opening text dialog
     setTimeout(() => {
-      if (finalTranscript) {
-        onTranscriptReady(finalTranscript);
-      }
+      if (finalTranscript) onTranscriptReady(finalTranscript);
     }, 100);
   }
 
@@ -45,9 +35,7 @@ function AddJournalBySpeech({ onTranscriptReady }) {
       >
         <div className="button-content-speech">
           {icons.micIcon()}
-          <span className="visually-hidden">
-            🎙️ Add Journal By Speech
-          </span>
+          <span className="visually-hidden">Add Journal By Speech</span>
         </div>
       </button>
 
@@ -56,39 +44,25 @@ function AddJournalBySpeech({ onTranscriptReady }) {
           <Dialog.Overlay className="dialog-overlay" />
           <Dialog.Content className="dialog-content">
             <Dialog.Title className="dialog-title">
-              {isProcessing ? "Processing..." : "Recording..."}
+              {isProcessing ? "Transcribing..." : "Recording..."}
             </Dialog.Title>
 
-            {/* Live transcript display */}
-            <div className="live-transcript">
-              {liveTranscript || (
-                <span className="transcript-placeholder">
-                  Start speaking...
-                </span>
-              )}
-            </div>
-
-            {/* Recording pulse indicator */}
-            {isRecording && (
+            {isRecording && !isProcessing && (
               <div className="recording-indicator">
                 <span className="pulse-dot" /> Listening
               </div>
             )}
 
-            {/* Processing spinner */}
             {isProcessing && (
               <div className="processing-indicator">
-                Transcribing your recording...
+                Be happy; the audio is being transcribed...
               </div>
             )}
 
             {error && <div className="transcript-error">{error}</div>}
 
-            <div className="dialog-actions">
-              <button
-                className="dialog-btn-cancel"
-                onClick={handleCancel}
-              >
+            <div className="dialog-actions by-speech-dialog-actions">
+              <button className="dialog-btn-cancel" onClick={handleCancel}>
                 Cancel
               </button>
               <button
