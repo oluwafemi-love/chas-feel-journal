@@ -1,0 +1,6 @@
+.edit-journal{
+  position: fixed;
+  bottom: 20px;
+  /* right: calc(20px + var(--sidebar-width)); */
+  transition: right 0.3s ease;
+}
