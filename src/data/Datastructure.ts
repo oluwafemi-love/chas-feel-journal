@@ -1,5 +1,4 @@
 // Datastructure.ts
-
 type JournalEntry = {
   id: string; // uuid
 
