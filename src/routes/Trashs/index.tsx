@@ -3,10 +3,10 @@ import { useJournals } from "../../context/JournalContext";
 import React from 'react';
 
 export const Route = createFileRoute('/Trashs/')({
-  component: RouteComponent,
+  component: Trash,
 })
 
-function RouteComponent() {
+function Trash() {
   const { trash = [], restoreJournal } = useJournals();
 
   return (
