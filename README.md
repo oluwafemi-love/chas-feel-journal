@@ -113,8 +113,7 @@ We ensured that all color combinations maintain sufficient contrast between text
 <p>
     <img width="436" height="783" alt="accessibility-color" src="https://github.com/user-attachments/assets/566f89e8-2ef5-4535-bfa1-83dd881e3602" />    
 </p>
-<img src="path/to/transparent.svg" height="20px">
-
+<br/>
 
 
 
@@ -125,8 +124,7 @@ All interactive elements, especially form inputs, are fully focusable and access
 <p>
   <img width="440" height="778" alt="accessibility-keyboard-focus" src="https://github.com/user-attachments/assets/99558af7-61aa-41f9-9a6a-0e7d54c6347e" />      
 </p>
-<img src="path/to/transparent.svg" height="20px">
-
+<br/>
 
 
 3. **Responsive Design:**
@@ -136,8 +134,7 @@ The application is designed to be fully responsive across mobile, tablet, and de
 <p>
    <img width="1920" height="1889" alt="responsiveness" src="https://github.com/user-attachments/assets/e68a8eac-58e0-4b59-8d36-15152134477e" />     
 </p>
-<img src="path/to/transparent.svg" height="20px">
-
+<br/>
 
 4. **Readable Typography & UI Clarity:**
 We prioritized legible typography, appropriate font sizes, and clear visual hierarchy to enhance readability and reduce cognitive load.
@@ -146,8 +143,7 @@ We prioritized legible typography, appropriate font sizes, and clear visual hier
 <p>
    <img width="436" height="779" alt="accessibility-legibility" src="https://github.com/user-attachments/assets/86a4b2d6-ec11-4f1f-9630-59ef1ccffb4f" />     
 </p>
-<img src="path/to/transparent.svg" height="20px">
-
+<br/>
 
 5. **Accessible UI Components:**
 For more complex interface elements that require robust accessibility handling, we leveraged Radix UI. This allows us to implement components that follow established accessibility patterns without reinventing them from scratch.
@@ -156,8 +152,7 @@ For more complex interface elements that require robust accessibility handling, 
  <p>
       <img width="439" height="786" alt="accessibility-radix" src="https://github.com/user-attachments/assets/0dcc26f8-ec70-4c98-b2b9-ab59d19aa316" />   
  </p>  
-<img src="path/to/transparent.svg" height="20px">
-
+<br/>
 
 
 ## Workflow
@@ -168,9 +163,7 @@ Important to mention; The process from 1 - 3 is iterative, rather than water-fal
 
 * Figure (Images) :
 <img width="2560" height="1440" alt="worflow-trello" src="https://github.com/user-attachments/assets/7555faaa-42df-45d4-97f5-d9c9dfbef8a0" />
-<img src="path/to/transparent.svg" height="20px">
-
+<br/>
 
 <img width="1920" height="1080" alt="workflow-figma" src="https://github.com/user-attachments/assets/2eb132f6-4103-4726-bec6-6ca18905e4b8" />
-<img src="path/to/transparent.svg" height="20px">
-
+<br/>
